@@ -1,0 +1,240 @@
+@import "variabili";
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $bgColorDarkMode;
+    height: 3rem;
+    padding: 1.6 rem;
+    letter-spacing: 1px;
+    border-bottom: 2px solid $gfColorDarkMode;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+
+    & img {
+        filter: invert(0%);
+        height: 2rem;
+        padding-left: 1rem;
+    }
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    & li {
+        overflow: hidden;
+        padding: 1rem;
+
+        & a {
+            font-family: $font;
+            text-decoration: none;
+            color: $txtColorDarkMode;
+            font-size: 1rem;
+            font-weight: 800;
+            height: fit-content;
+            cursor: pointer;
+
+            & a:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1rem;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: $bgColorDarkMode;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::before {
+    margin-top: 0;
+    transform: rotate(405deg);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button {
+    background: $bgColorDarkMode;
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+}
+
+
+
+/* Riga alta menu */
+.menu-button::before {
+    content: '';
+    margin-top: -8px;
+    background-color: $gfColorDarkMode;
+
+}
+
+/* Riga bassa menu */
+.menu-button::after {
+    content: '';
+    margin-top: 8px;
+    background-color: $gfColorDarkMode;
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button {
+    background: $bgColorDarkMode;
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    height: 60px;
+    line-height: 60px;
+    width: 100vw;
+    z-index: 1;
+
+}
+
+.logo {
+    float: left;
+    margin-left: 28px;
+    height: 60px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#navbar ul {
+    display: inline-block;
+    list-style: none;
+    margin-top: -2px;
+    text-align: right;
+    transition: transform 0.5s ease-out;
+    -webkit-transition: transform 0.5s ease-out;
+
+    & li {
+        display: inline-block;
+
+        & a {
+            display: block;
+            font-size: 0.7em;
+            height: 50px;
+            letter-spacing: 1px;
+            margin: 0 40px;
+            padding: 0 4px;
+            position: relative;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    }
+
+}
+@media screen and (max-width:1100px) {
+    .menu {
+    
+        & li {
+            margin: 0.8em;
+            padding: 5px;
+            & a {
+                font-size: 1.2rem;    
+            }
+        }
+    }
+}
+@media screen and (max-width:800px) {
+    /* navbar */
+
+    .menu-button-container {
+        display: flex;
+    }
+
+    // Riga centro menu
+    .menu-button {
+        background-color: $gfColorDarkMode;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 46.2px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: end;
+        z-index: 1;
+    }
+
+    #menu-toggle~.menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #menu-toggle:checked~.menu li {
+        border-bottom: 1px solid $gfColorDarkMode;
+        border-left: 1px solid $gfColorDarkMode;
+        height: 2.5em;
+        padding: 0.5em;
+        width: 10rem;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+
+    }
+
+    .menu>li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 25%;
+        background-color: $bgColorDarkMode;
+        align-items: center;
+    }
+
+    .menu>li:not(:last-child) {
+        border-bottom: 1px solid $gfColorDarkMode;
+    }
+
+    .menu li a {
+        font-size: 0.8em;
+    }
+}

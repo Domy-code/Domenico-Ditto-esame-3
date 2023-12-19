@@ -1,0 +1,1852 @@
+@import "header";
+@import "footer";
+@import "variabili";
+
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    background-color: $bgColorDarkMode;
+
+    & .return {
+        margin-top: 3rem;
+        font-family: $font;
+        font-size: 2rem;
+        color: $txtColorDarkMode;
+        cursor: pointer;
+    }
+}
+
+.noLog {
+    color: $txtColorDarkMode;
+
+    & a {
+        color: $txtColorDarkMode;
+    }
+}
+
+#errLogin {
+    color: #ff0000b0;
+}
+
+.error {
+    color: $errColor;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overButton {
+    position: absolute;
+    width: 10rem;
+    height: 3.3rem;
+    z-index: 1;
+    cursor: not-allowed;
+}
+
+#btnUpload {
+    cursor: not-allowed;
+}
+
+.containerPrivacy {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+
+    & .textPrivacy {
+        font-size: small;
+        color: $gfColorDarkMode;
+        padding-right: 1rem;
+
+        & a {
+            color: $gfColorDarkMode;
+        }
+    }
+
+    & input {
+        font-size: medium;
+    }
+}
+
+/* Riga presentazione */
+.rigaPresentazione {
+    display: flex;
+    flex-direction: row;
+    height: 40rem;
+    border-bottom: 2px solid $gfColorDarkMode;
+
+    // & .colonnaStretta {
+
+    // }
+
+    & .colonnaLarga {
+        text-align: left;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-items: left;
+        width: 75%;
+        padding: 3rem;
+        height: 100%;
+        color: $txtColorDarkMode;
+
+
+        & h1 {
+            font-family: $font;
+            font-size: $fontSizeTitolo;
+            padding-bottom: 10px;
+        }
+
+        & p {
+            line-height: 1.8;
+        }
+
+    }
+}
+
+/* Riga about */
+
+#rigaAbout {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: 100%;
+    border-bottom: 2px solid $gfColorDarkMode;
+
+    & .colonnaLarga {
+        text-align: left;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        width: 75%;
+        color: $txtColorDarkMode;
+        border-left: 2px solid $gfColorDarkMode;
+        padding: 2rem;
+        flex-direction: column;
+
+        & h3 {
+            text-align: center;
+            padding-top: 3rem;
+            padding-bottom: 5rem;
+            font-family: $font;
+            font-size: $fontSizeTitolo;
+            color: $txtColorDarkMode;
+        }
+
+
+        & p {
+            line-height: 1.8;
+        }
+
+
+        ul {
+            padding: 0;
+            padding-top: 2rem;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            gap: 1rem;
+            list-style: none;
+
+            & li {
+                & img {
+                    height: 12rem;
+                    filter: invert($filterValueDarkMode);
+                    padding: 2rem;
+                }
+            }
+
+        }
+
+    }
+
+    & .colonnaStretta {
+        width: 25%;
+        background:
+            linear-gradient(63deg, $bgColorDarkMode 23%, transparent 23%) 7px 0,
+            linear-gradient(63deg, transparent 74%, $bgColorDarkMode 78%),
+            linear-gradient(63deg, transparent 34%, $bgColorDarkMode 38%, $bgColorDarkMode 58%, transparent 62%), $gfColorDarkMode;
+        background-size: 16px 48px;
+    }
+}
+
+// Riga services
+#rigaServices {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: 100%;
+    border-bottom: 2px solid $gfColorDarkMode;
+
+    & .colonnaLarga {
+        text-align: left;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        color: $txtColorDarkMode;
+        //border-right: 2px solid $gfColorDarkMode;
+        padding: 2rem;
+        flex-direction: column;
+
+        & h3 {
+            padding-bottom: 1rem;
+            font-family: $font;
+            font-size: $fontSizeTitolo;
+            padding-bottom: 3rem;
+        }
+
+        & p {
+            line-height: 1.8;
+            width: 60%;
+        }
+
+        & ul {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 1rem;
+            width: 80%;
+            padding: 0;
+
+            & li {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 2rem;
+                font-size: $fontSizeParagrafo;
+                color: $txtColorDarkMode;
+                font-family: $font;
+
+                & img {
+                    width: 8rem;
+                    filter: invert(80%);
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+
+    }
+
+    // & .colonnaStretta {
+
+
+    // }
+}
+
+
+/* Riga works */
+#rigaWorks {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    border-bottom: 2px solid $gfColorDarkMode;
+    color: $txtColorDarkMode;
+
+    & .rigaStretta {
+        height: 100px;
+        border-bottom: 2px solid $gfColorDarkMode;
+        background:
+            linear-gradient(135deg, $gfColorDarkMode 25%, transparent 25%) -50px 0,
+            linear-gradient(225deg, $gfColorDarkMode 25%, transparent 25%) -50px 0,
+            linear-gradient(315deg, $gfColorDarkMode 25%, transparent 25%),
+            linear-gradient(45deg, $gfColorDarkMode 25%, transparent 25%);
+        background-size: 50px 50px;
+    }
+
+    & .colonnaLarga {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & h3 {
+            padding-top: 3rem;
+            padding-bottom: 5rem;
+            font-family: $font;
+            font-size: $fontSizeTitolo;
+            color: $txtColorDarkMode;
+        }
+
+        & .gallery {
+
+            width: 75%;
+
+            & ul {
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                height: fit-content;
+                padding: 0;
+
+                & li {
+                    border: 1px solid $gfColorDarkMode;
+                    margin: 1rem;
+
+                    & a {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        color: $txtColorDarkMode;
+                        text-decoration: none;
+                        margin-bottom: 1rem;
+                        width: 15rem;
+                        height: 17rem;
+                        justify-content: center;
+
+                        & img {
+                            width: 95%;
+                            margin: 1rem;
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    &:hover {
+                        border: 2px solid $gfColorDarkMode;
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+
+/* Riga Contacts */
+
+#rigaContatti {
+    display: flex;
+    flex-direction: row-reverse;
+    height: fit-content;
+    width: 100%;
+
+    & .colonnaStretta {
+        width: 20%;
+        background:
+            linear-gradient(45deg, $gfColorDarkMode 45px, transparent 45px)64px 64px,
+            linear-gradient(45deg, $gfColorDarkMode 45px, transparent 45px, transparent 91px, $bgColorDarkMode 91px, $bgColorDarkMode 135px, transparent 135px),
+            linear-gradient(-45deg, $gfColorDarkMode 23px, transparent 23px, transparent 68px, $gfColorDarkMode 68px, $gfColorDarkMode 113px, transparent 113px, transparent 158px, $gfColorDarkMode 158px);
+        background-size: 128px 128px;
+        border-left: 2px solid $gfColorDarkMode;
+    }
+
+    & .colonnaLarga {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+
+        .rigaTitolo {
+
+            & h3 {
+                text-align: center;
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+                font-family: $font;
+                font-size: $fontSizeTitolo;
+                color: $txtColorDarkMode;
+            }
+        }
+
+        .rigaContenuto {
+            display: flex;
+            flex-direction: row;
+
+            & .contatti {
+                height: fit-content;
+                padding-top: 5rem;
+                width: 32%;
+                display: flex;
+                justify-content: center;
+
+                & ul {
+                    list-style: none;
+                    padding: 0;
+                    width: fit-content;
+
+
+
+                    & li {
+                        padding: 2rem;
+                        display: flex;
+                        align-items: center;
+
+
+                        & :hover {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    & a {
+                        text-decoration: none;
+                        color: $txtColorDarkMode;
+                    }
+
+                    & img {
+                        filter: invert($filterValueDarkMode);
+                        height: 2rem;
+                        padding-right: 1rem;
+                    }
+                }
+            }
+
+            & #formContatti {
+                padding-top: 3rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 60%;
+                padding-bottom: 2rem;
+                color: $txtColorDarkMode;
+
+                & h3 {
+                    padding-top: 2rem;
+                    padding-bottom: 5rem;
+                    font-family: $font;
+                    font-size: $fontSizeTitolo;
+                    color: $txtColorDarkMode;
+                }
+
+                & .counter {
+                    color: rgba(255, 255, 255, 0.678);
+                }
+
+                & .messaggioInviato {
+                    color: $txtColorDarkMode;
+                }
+
+            }
+
+            & fieldset {
+                border: none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            & input[type="text"],
+            & input[type="email"],
+            & input[type="tel"],
+            & input[type="date"] {
+                height: 4rem;
+                width: 25rem;
+                border: none;
+                border-bottom: 1px solid $gfColorDarkMode;
+                box-sizing: border-box;
+                outline: none;
+                font-size: $fontSizeParagrafo;
+                background-color: $bgColorDarkMode;
+                color: $txtColorDarkMode;
+            }
+
+            & textarea {
+                margin-top: 2rem;
+                width: 25rem;
+                padding-top: 0.5rem;
+                background-color: $bgColorDarkMode;
+                border: 1px solid $gfColorDarkMode;
+                min-height: 6rem;
+                font-size: $fontSizeParagrafo;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color: $txtColorDarkMode;
+
+            }
+
+            & input[type="text"]:focus,
+            & input[type="email"]:focus,
+            & input[type="tel"]:focus,
+            & select:focus {
+                border-bottom: 3px solid $gfColorDarkMode;
+                color: $txtColorDarkMode;
+
+            }
+
+            & textarea:focus {
+                border: 3px solid $gfColorDarkMode;
+            }
+
+            & div.elbutton {
+                text-align: right;
+            }
+
+
+
+            & button {
+                display: inline;
+                color: $txtColorDarkMode;
+                background-color: $bgColorDarkMode;
+                border: 1px solid $gfColorDarkMode;
+                width: 10rem;
+                padding: 1rem;
+                font-size: $fontSizeParagrafo;
+                margin: 1.5rem;
+                cursor: not-allowed;
+                z-index: 0;
+
+
+                &:hover {
+                    box-shadow: 0 0 0 2px $gfColorDarkMode;
+                }
+
+            }
+        }
+    }
+}
+
+
+/* pagina worksDetail */
+
+.rigaLavori {
+    height: fit-content;
+    color: $txtColorDarkMode;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .rigaDescrizione {
+        width: 70%;
+        padding-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & h1 {
+            font-size: $fontSizeTitolo;
+            padding-bottom: 4rem;
+            font-family: $font;
+        }
+
+        & p {
+            width: 100%;
+        }
+
+        & .rigaFoto {
+            display: flex;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 3rem;
+
+            & img {
+                width: 85%;
+                ;
+            }
+        }
+    }
+
+
+    & button {
+        color: $txtColorDarkMode;
+        background-color: $bgColorDarkMode;
+        border: 1px solid $gfColorDarkMode;
+        width: 10rem;
+        padding: 1rem;
+        font-size: $fontSizeParagrafo;
+        margin: 1.5rem;
+
+        &:hover {
+            box-shadow: 0 0 0 2px $gfColorDarkMode;
+            cursor: pointer;
+
+        }
+    }
+}
+
+
+#formRegistrazione {
+    padding-top: 1rem;
+    height: 80%;
+}
+
+////////////////////////////PAGINA LOGIN///////////////////////////////////////////
+.paginaLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    color: $txtColorDarkMode;
+
+    & .login {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        & h1 {
+            font-family: $font;
+            font-size: 5rem;
+            padding-bottom: 3rem;
+        }
+
+        & form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & .containerInput {
+                display: flex;
+                flex-direction: column;
+
+                & .containerUsername {
+                    display: flex;
+                    flex-direction: column;
+
+                    & #errLogUsrnm {
+                        display: flex;
+                        justify-content: center;
+                    }
+
+                }
+
+                & .containerPassword {
+                    display: flex;
+                    flex-direction: column;
+
+                    & .containerPswTgle {
+                        display: flex;
+                        align-items: center;
+
+                        & #errLogPsw {
+                            display: flex;
+                            justify-content: center;
+                        }
+
+                        & img {
+                            width: 2.5rem;
+                            cursor: pointer;
+                            filter: invert(80%);
+                        }
+                    }
+
+                }
+            }
+
+            & input[type="text"],
+            & input[type="password"] {
+                height: 4rem;
+                width: 25rem;
+                border: none;
+                border-bottom: 1px solid $gfColorDarkMode;
+                box-sizing: border-box;
+                outline: none;
+                font-size: $fontSizeParagrafo;
+                background-color: $bgColorDarkMode;
+                color: $txtColorDarkMode;
+            }
+
+            & #errLogPsw {
+                margin-bottom: 1rem;
+            }
+
+            & button {
+                color: $txtColorDarkMode;
+                background-color: $bgColorDarkMode;
+                border: 1px solid $gfColorDarkMode;
+                width: 10rem;
+                padding: 1rem;
+                font-size: $fontSizeParagrafo;
+                margin: 1.5rem;
+
+                &:hover {
+                    box-shadow: 0 0 0 2px $gfColorDarkMode;
+
+                }
+            }
+        }
+    }
+
+    & p {
+        & a {
+            text-decoration: underline;
+            color: $txtColorDarkMode;
+        }
+    }
+}
+
+
+///////////////////////////PAGINA REGISTRAZIONE///////////////////////////////////
+.paginaRegistrazione {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & .registrazione {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & h1 {
+
+            font-family: $font;
+            font-size: $fontSizeTitolo;
+            color: $txtColorDarkMode;
+        }
+
+        & .return {
+            margin-top: 5rem;
+            text-decoration: none;
+        }
+
+        & #formRegistrazione {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 6rem;
+            border: 1px solid $gfColorDarkMode;
+
+
+
+            & input[type="text"],
+            & input[type="password"] {
+                height: 4rem;
+                width: 25rem;
+                border: none;
+                border-bottom: 1px solid $gfColorDarkMode;
+                box-sizing: border-box;
+                outline: none;
+                font-size: $fontSizeParagrafo;
+                background-color: $bgColorDarkMode;
+                color: $txtColorDarkMode;
+            }
+
+            & .error {
+                color: $errColor;
+            }
+
+
+            & button {
+                color: $txtColorDarkMode;
+                background-color: $bgColorDarkMode;
+                border: 1px solid $gfColorDarkMode;
+                width: 10rem;
+                padding: 1rem;
+                font-size: $fontSizeParagrafo;
+                margin: 1.5rem;
+                z-index: 0;
+                cursor: not-allowed;
+
+                &:hover {
+                    box-shadow: 0 0 0 2px $gfColorDarkMode;
+
+                }
+            }
+
+            & .dateContainer {
+                display: flex;
+                flex-direction: row;
+                width: 25rem;
+                justify-content: start;
+                border-bottom: 1px solid $gfColorDarkMode;
+                height: 4rem;
+                align-items: center;
+
+                & label {
+                    display: flex;
+                    align-items: center;
+                    padding-right: 5rem;
+                    color: $gfColorDarkMode;
+                }
+            }
+
+            & .selectSessoContainer {
+                display: flex;
+                align-items: center;
+                height: 4rem;
+            }
+        }
+    }
+}
+
+input[type="date"] {
+    background-color: $bgColorDarkMode;
+    padding: 15px;
+    font-family: "Roboto Mono", monospace;
+    color: #ffffff;
+    font-size: 18px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid $gfColorDarkMode;
+    height: 3rem;
+}
+
+::-webkit-calendar-picker-indicator {
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.custom-select {
+    width: 25rem;
+    position: relative;
+
+}
+
+select {
+    appearance: none;
+    /* safari */
+    -webkit-appearance: none;
+    /* other styles for aesthetics */
+    width: 100%;
+    font-size: 1.15rem;
+    padding: 0.675em 6em 0.675em 1em;
+    background-color: $bgColorDarkMode;
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+    color: $gfColorDarkMode;
+    cursor: pointer;
+}
+
+.custom-select::before,
+.custom-select::after {
+    --size: 0.3rem;
+    position: absolute;
+    content: "";
+    right: 1rem;
+    pointer-events: none;
+}
+
+.custom-select::before {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: var(--size) solid $gfColorDarkMode;
+    top: 40%;
+}
+
+.custom-select::after {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-top: var(--size) solid $gfColorDarkMode;
+    top: 55%;
+}
+
+/////////////////////PAGINA DASHBOARD/////////////////////////////
+.paginaDashboard {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    padding-top: 4rem;
+
+
+    & .containerTitoloDashboard {
+        height: 25%;
+
+        & h3 {
+            color: $txtColorDarkMode;
+            font-size: 3rem;
+            font-family: $font;
+        }
+
+    }
+
+    & .containerIconsDashboard {
+        display: flex;
+        justify-content: space-evenly;
+        height: 42%;
+
+        & .containerUsers {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & img {
+                width: 8rem;
+                filter: invert(75%);
+            }
+
+            & a {
+                text-decoration: none;
+                color: $txtColorDarkMode;
+                font-family: $font;
+                font-size: 3rem;
+            }
+        }
+
+        & .containerLavori {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & img {
+                width: 8rem;
+                filter: invert(75%);
+            }
+
+            & a {
+                text-decoration: none;
+                color: $txtColorDarkMode;
+                font-family: $font;
+                font-size: 3rem;
+            }
+        }
+
+
+
+    }
+
+    & .containerLogoutDashboard {
+        height: 33%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        & div {
+            text-decoration: none;
+            font-size: 2rem;
+            font-family: $font;
+            color: $txtColorDarkMode;
+            cursor: pointer;
+        }
+    }
+}
+
+////////////////////PAGINA UTENTI////////////////////////////////
+.paginaVisualizzazioneUtenti {
+    height: 90vh;
+    padding: 1rem;
+    padding-top: 4rem;
+
+    & .containerTitolo {
+        height: 25%;
+
+        & h1 {
+            color: $txtColorDarkMode;
+            font-size: 4rem;
+            font-family: $font;
+        }
+    }
+
+    & .flex-container {
+        height: 42%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+
+        & .listaUtenti {
+            margin-right: 3rem;
+
+            & ul {
+                padding: 0rem;
+                border: 1px solid $gfColorDarkMode;
+                overflow: scroll;
+                height: 20rem;
+
+                & li {
+                    list-style: none;
+                    height: fit-content;
+
+                    & a {
+                        color: $txtColorDarkMode;
+                        text-decoration: none;
+                        border-bottom: 1px solid $gfColorDarkMode;
+                        padding: 1rem;
+                        display: list-item;
+                    }
+
+                    &.selezionato {
+                        background-color: $gfColorDarkMode;
+
+                        & a {
+                            color: $bgColorDarkMode;
+                        }
+                    }
+                }
+            }
+        }
+
+        & .contenuto {
+            width: 40%;
+            border: 1px solid $gfColorDarkMode;
+            height: 20rem;
+            display: inline-block;
+
+            & h3 {
+                color: $txtColorDarkMode;
+                padding: 1rem;
+            }
+
+            .grass {
+                font-weight: bold;
+                color: $txtColorDarkMode;
+            }
+
+            .datiUtente {
+                color: $txtColorDarkMode;
+                padding: 0.5rem;
+            }
+        }
+
+        & #formPulsanti {
+            display: flex;
+            flex-direction: column;
+
+            & button {
+                display: inline;
+                color: $txtColorDarkMode;
+                background-color: $bgColorDarkMode;
+                border: 1px solid $gfColorDarkMode;
+                width: 10rem;
+                padding: 1rem;
+                font-size: $fontSizeParagrafo;
+                margin: 1.5rem;
+
+                &:hover {
+                    box-shadow: 0 0 0 2px $gfColorDarkMode;
+                    cursor: pointer;
+
+                }
+            }
+        }
+
+    }
+
+}
+
+////////////////////PAGINA MODIFICA UTENTI/////////////////////////
+.paginaModificaUtente {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & .contenuto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+        padding-bottom: 3rem;
+
+        & .contenitoreTitolo {
+            display: flex;
+            justify-content: center;
+            color: $txtColorDarkMode;
+            padding-bottom: 2rem;
+
+            & h1 {
+                font-family: $font;
+                font-size: 4rem;
+            }
+        }
+
+        & #formModificaUtente {
+            display: flex;
+            flex-direction: column;
+            padding: 3rem;
+            border: 1px solid $gfColorDarkMode;
+            width: 70%;
+
+            & label {
+                color: $txtColorDarkMode;
+                font-weight: bold;
+            }
+
+            & .fieldContainer {
+                display: flex;
+                flex-direction: column;
+                padding: 1rem;
+
+                & select {
+                    color: $txtColorDarkMode;
+                }
+
+                & .error {
+                    color: $errColor;
+                }
+
+                & input[type="text"],
+                input[type="password"] {
+                    background-color: $bgColorDarkMode;
+                    color: $txtColorDarkMode;
+                    border-bottom: 1px solid $gfColorDarkMode;
+                    border-right: none;
+                    font-size: 1.2rem;
+                }
+            }
+
+            & .containerButton {
+                display: flex;
+                justify-content: center;
+
+                & button {
+                    color: $txtColorDarkMode;
+                    background-color: $bgColorDarkMode;
+                    border: 1px solid $gfColorDarkMode;
+                    width: 10rem;
+                    padding: 1rem;
+                    font-size: $fontSizeParagrafo;
+                    margin: 1.5rem;
+
+                    &:hover {
+                        box-shadow: 0 0 0 2px $gfColorDarkMode;
+                        cursor: pointer;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+//////////////////PAGINA VISUALIZZAZIONE LAVORI///////////////////////
+.paginaVisualizzazioneLavori {
+    height: 95vh;
+    padding: 1rem;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+
+    & .containerTitolo {
+        height: 25%;
+        padding-bottom: 2rem;
+
+        & h1 {
+            color: $txtColorDarkMode;
+            font-size: 4rem;
+            font-family: $font;
+        }
+    }
+
+    & .flex-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+
+        & .listaLavori {
+            margin-right: 3rem;
+            width: 20%;
+
+            & ul {
+                padding: 0rem;
+                border: 1px solid $gfColorDarkMode;
+                overflow: scroll;
+                height: 24rem;
+
+                & li {
+                    list-style: none;
+                    height: fit-content;
+
+                    & a {
+                        color: $txtColorDarkMode;
+                        text-decoration: none;
+                        border-bottom: 1px solid $gfColorDarkMode;
+                        padding: 1rem;
+                        display: list-item;
+                    }
+
+                    &.selezionato {
+                        background-color: $gfColorDarkMode;
+
+                        & a {
+                            color: $bgColorDarkMode;
+                        }
+                    }
+                }
+            }
+        }
+
+        & .contenuto {
+            width: 30%;
+            border: 1px solid $gfColorDarkMode;
+            display: flex;
+            display: inline-block;
+            height: 24rem;
+
+            & h3 {
+                color: $txtColorDarkMode;
+                padding: 1rem;
+            }
+
+            .grass {
+                font-weight: bold;
+                color: $txtColorDarkMode;
+                padding-left: 1rem;
+            }
+
+            .datiLavori {
+                color: $txtColorDarkMode;
+                padding-left: 1rem;
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+            }
+
+            .datiLavoriDescrizione {
+                color: $txtColorDarkMode;
+                padding-left: 1rem;
+                display: flex;
+                flex-direction: column;
+                height: 12rem;
+                overflow-x: hidden;
+                overflow-y: scroll;
+            }
+
+        }
+
+        & .containerImmagine {
+            display: flex;
+            justify-content: center;
+            margin-left: 3rem;
+            width: 30%;
+            border: 1px solid $gfColorDarkMode;
+            align-items: center;
+            height: 24rem;
+
+            & img {
+                width: 95%;
+            }
+        }
+    }
+
+    & .containerPulsanti {
+        display: flex;
+        justify-content: center;
+
+        & #formPulsanti {
+            display: flex;
+            flex-direction: row;
+
+            & button {
+                display: inline;
+                color: $txtColorDarkMode;
+                background-color: $bgColorDarkMode;
+                border: 1px solid $gfColorDarkMode;
+                width: 10rem;
+                padding: 1rem;
+                font-size: $fontSizeParagrafo;
+                margin: 1.5rem;
+
+                &:hover {
+                    box-shadow: 0 0 0 2px $gfColorDarkMode;
+
+                }
+            }
+        }
+    }
+}
+
+//////////////////PAGINA AGGIUNGI LAVORI/////////////////////////////
+.paginaAggiungiLavori {
+    height: fit-content;
+    padding: 1rem;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .containerTitolo {
+        height: 25%;
+        padding-bottom: 2rem;
+
+        & h1 {
+            color: $txtColorDarkMode;
+            font-size: 4rem;
+            font-family: $font;
+        }
+    }
+
+    & #formAggiungiLavori {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        margin-bottom: 6rem;
+        border: 1px solid $gfColorDarkMode;
+
+        & input[type="text"] {
+            height: 4rem;
+            width: 25rem;
+            border: none;
+            border-bottom: 1px solid $gfColorDarkMode;
+            box-sizing: border-box;
+            outline: none;
+            font-size: $fontSizeParagrafo;
+            background-color: $bgColorDarkMode;
+            color: $txtColorDarkMode;
+        }
+
+        & textarea {
+            margin-top: 2rem;
+            width: 25rem;
+            padding-top: 0.5rem;
+            background-color: $bgColorDarkMode;
+            border: 1px solid $gfColorDarkMode;
+            min-height: 6rem;
+            font-size: $fontSizeParagrafo;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: $txtColorDarkMode;
+        }
+
+        & .counter {
+            color: $gfColorDarkMode;
+        }
+
+        & .error {
+            color: $errColor;
+        }
+
+        & button {
+            display: inline;
+            color: $txtColorDarkMode;
+            background-color: $bgColorDarkMode;
+            border: 1px solid $gfColorDarkMode;
+            width: 10rem;
+            padding: 1rem;
+            font-size: $fontSizeParagrafo;
+            margin: 1.5rem;
+
+            &:hover {
+                box-shadow: 0 0 0 2px $gfColorDarkMode;
+                cursor: pointer;
+
+            }
+        }
+    }
+}
+
+////////////////////PAGINA MODIFICA LAVORI///////////////////////////////
+.paginaModificaLavori {
+    height: fit-content;
+    padding: 1rem;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .containerTitolo {
+        height: 25%;
+        padding-bottom: 2rem;
+
+        & h1 {
+            color: $txtColorDarkMode;
+            font-size: 4rem;
+            font-family: $font;
+        }
+    }
+
+    & .contenuto {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        & h3 {
+            padding: 1rem;
+            color: $txtColorDarkMode;
+        }
+
+        & #formModificaLavori {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1rem;
+            border: 1px solid $gfColorDarkMode;
+            margin: 0.5rem;
+            height: 26rem;
+            width: 50%;
+
+            & label {
+                color: $txtColorDarkMode;
+                font-weight: bold;
+            }
+
+            & input {
+                margin-bottom: 1rem;
+                height: 4rem;
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid $gfColorDarkMode;
+                box-sizing: border-box;
+                outline: none;
+                font-size: $fontSizeParagrafo;
+                background-color: $bgColorDarkMode;
+                color: $txtColorDarkMode;
+            }
+
+            & .counter {
+                padding-bottom: 1rem;
+                color: $gfColorDarkMode;
+            }
+
+            & textarea {
+
+                width: 100%;
+                background-color: $bgColorDarkMode;
+                border: 1px solid $gfColorDarkMode;
+                min-height: 6rem;
+                font-size: $fontSizeParagrafo;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color: $txtColorDarkMode;
+            }
+
+            & .error {
+                color: $errColor;
+            }
+
+            & .buttonContainer {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+
+                & button {
+                    display: inline;
+                    color: $txtColorDarkMode;
+                    background-color: $bgColorDarkMode;
+                    border: 1px solid $gfColorDarkMode;
+                    width: 10rem;
+                    padding: 1rem;
+                    font-size: $fontSizeParagrafo;
+                    margin-bottom: 1rem;
+
+                    &:hover {
+                        box-shadow: 0 0 0 2px $gfColorDarkMode;
+                    }
+                }
+
+
+            }
+
+
+        }
+
+        & #formUpload {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1rem;
+            margin: 0.5rem;
+            border: 1px solid $gfColorDarkMode;
+            color: $txtColorDarkMode;
+            height: 26rem;
+            width: 50%;
+
+            & div {
+                font-weight: bold;
+            }
+
+            & input[type=file]::file-selector-button {
+                margin-top: 1rem;
+                color: $txtColorDarkMode;
+                background-color: $bgColorDarkMode;
+                border: 1px solid $gfColorDarkMode;
+                width: 5rem;
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-radius: 5px;
+
+                &:hover {
+                    box-shadow: 0 0 0 2px $gfColorDarkMode;
+                    cursor: pointer;
+
+                }
+            }
+
+            & .buttonContainer {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+
+                & button {
+                    color: $txtColorDarkMode;
+                    background-color: $bgColorDarkMode;
+                    border: 1px solid $gfColorDarkMode;
+                    width: 10rem;
+                    padding: 1rem;
+                    margin: 0.5rem;
+                    font-size: $fontSizeParagrafo;
+                    margin-bottom: 1rem;
+
+
+                    &:hover {
+                        box-shadow: 0 0 0 2px $gfColorDarkMode;
+                        cursor: pointer;
+                    }
+                }
+
+            }
+
+            & .imageContainer {
+                display: flex;
+                justify-content: center;
+                height: 55%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1030px) {
+    #rigaContatti {
+        flex-direction: column;
+        align-items: center;
+
+
+        & .colonnaStretta {
+            width: 100%;
+            height: 3rem;
+            border-bottom: 1px solid $gfColorDarkMode;
+
+        }
+
+
+        & .colonnaLarga {
+            width: 100%;
+
+            & .rigaTitolo {
+                & h3 {
+                    font-size: ($fontSizeTitolo)- 1;
+                }
+            }
+
+            & .rigaContenuto {
+                align-items: center;
+                flex-direction: column-reverse;
+
+                & input[type="text"],
+                & input[type="email"],
+                & input[type="tel"],
+                & input[type="date"] {
+                    width: 95%;
+                }
+
+                & textarea {
+                    width: 95%;
+                }
+
+                & .contatti {
+                    padding-top: 0;
+                }
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width:1150px) {
+    #rigaAbout {
+        & .colonnaLarga {
+            & ul {
+                grid-template-columns: auto auto auto;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:843px) {
+    #rigaServices {
+        & .colonnaLarga {
+            & ul {
+                grid-template-columns: auto auto;
+
+                & li {
+                    & img {
+                        width: 6rem;
+                    }
+
+                }
+            }
+        }
+    }
+
+
+    #rigaAbout {
+        & .colonnaLarga {
+            & ul {
+                grid-template-columns: auto auto auto;
+
+                & img {
+                    height: 9rem;
+
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:630px) {
+    #rigaServices {
+        & .colonnaLarga {
+            & ul {
+                grid-template-columns: auto auto;
+
+                & li {
+                    & img {
+                        width: 5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    #rigaAbout{
+        & .colonnaLarga{
+            & ul{
+                grid-template-columns: auto auto auto;
+                & li{
+                    & img{
+                        height: 8rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:576px) {
+
+    /* Riga presentazione */
+
+    .rigaPresentazione {
+        flex-direction: column-reverse;
+        height: fit-content;
+
+        & .colonnaLarga {
+            width: 100%;
+            height: 85%;
+
+            & h1 {
+                font-size: ($fontSizeTitolo)-1;
+            }
+
+            & p {
+                font-size: ($fontSizeParagrafo)-0.2;
+                padding-right: 0;
+            }
+        }
+
+        & .colonnaStretta {
+            width: 100%;
+            height: 90px;
+            border-right: none;
+            border-bottom: none;
+            border-left: none;
+        }
+    }
+
+    #rigaAbout {
+        flex-direction: column;
+        height: fit-content;
+        justify-content: center;
+
+        & .colonnaStretta {
+            width: 100%;
+            height: 90px;
+            border-right: none;
+            border-bottom: 2px solid $gfColorDarkMode;
+        }
+
+        & .colonnaLarga {
+            border-left: none;
+            height: 85%;
+            width: 100%;
+            padding: 2rem;
+
+            & h3 {
+                font-size: ($fontSizeTitolo)-1;
+                padding-top: 0;
+                padding-bottom: 2rem;
+            }
+
+            & p {
+                font-size: ($fontSizeParagrafo)-0.2;
+            }
+
+            & ul {
+                grid-template-columns: auto auto auto auto;
+
+                & img {
+                    height: 7rem;
+                }
+            }
+        }
+    }
+
+    #rigaServices {
+        flex-direction: column-reverse;
+        height: fit-content;
+        justify-content: center;
+
+        & .colonnaStretta {
+            width: 100%;
+            height: 0px;
+
+            border-bottom: none
+        }
+
+        & .colonnaLarga {
+            border-left: none;
+            height: 85%;
+            width: 100%;
+            padding: 2rem;
+            border-right: none;
+            padding-left: 0;
+            padding-right: 0;
+
+            & h3 {
+                font-size: ($fontSizeTitolo)-1;
+            }
+
+            & p {
+                font-size: ($fontSizeParagrafo)- 0.2;
+            }
+
+            & ul {
+                padding: 0;
+                grid-template-columns: auto auto auto;
+
+                & li {
+                    font-size: ($fontSizeParagrafo)- 0.3;
+
+                    & img {
+                        width: 4rem;
+                    }
+                }
+
+            }
+
+        }
+    }
+
+    #rigaWorks {
+        & .colonnaStretta {
+            height: 20%;
+        }
+
+
+        & .colonnaLarga {
+            height: 80%;
+
+            & h3 {
+                font-size: ($fontSizeTitolo) - 1;
+                padding-top: 2rem;
+                padding-bottom: 1rem;
+            }
+
+            & .gallery {
+                width: 100%;
+
+                & img {
+                    width: 8rem;
+                }
+            }
+        }
+    }
+
+    /* Pagina WorksDetail*/
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    textarea {
+        width: 15rem;
+    }
+
+    .rigaLavori {
+        display: flex;
+        flex-direction: column;
+
+        & h1 {
+            font-size: $fontSizeTitolo;
+        }
+    }
+
+    .paginaLogin {
+        & .login {
+            width: 80%;
+
+            & form {
+                width: 100%;
+
+                & .containerInput {
+                    width: 100%;
+
+                    & .containerUsername {
+                        width: 100%;
+
+                        & #errLogUsrnm {
+                            width: 100%;
+                        }
+
+                    }
+
+                    & .containerPassword {
+                        width: 100%;
+
+                        & .containerPswTgle {
+                            width: 100%;
+
+                            & #errLogPsw {
+                                width: 100%;
+                            }
+
+                            & img {
+                                width: 2.5rem;
+                                cursor: pointer;
+                                filter: invert(80%);
+                            }
+                        }
+
+                    }
+                }
+
+                & input[type="text"],
+                & input[type="password"] {
+                    width: 16rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:497px) {
+    #rigaAbout {
+        & .colonnaLarga {
+            & ul {
+                grid-template-columns: auto auto auto;
+
+                & img {
+                    height: 6.5rem;
+
+                }
+            }
+        }
+    }
+
+    #rigaServices {
+        & .colonnaLarga {
+            & ul {
+                grid-template-columns: auto auto;
+
+                & li {
+                    & img {
+                        width: 3rem;
+                    }
+
+                }
+            }
+        }
+    }
+}

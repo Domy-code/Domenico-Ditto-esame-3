@@ -1,0 +1,1751 @@
+@font-face {
+  font-family: "GruppoRegular";
+  src: url(../font/GruppoRegular.ttf);
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #222222;
+  height: 3rem;
+  padding: 1.6 rem;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #afafaf;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+.header img {
+  filter: invert(0%);
+  height: 2rem;
+  padding-left: 1rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.menu li {
+  overflow: hidden;
+  padding: 1rem;
+}
+.menu li a {
+  font-family: "GruppoRegular";
+  text-decoration: none;
+  color: #e0e0e0;
+  font-size: 1rem;
+  font-weight: 800;
+  height: -moz-fit-content;
+  height: fit-content;
+  cursor: pointer;
+}
+.menu li a a:hover {
+  cursor: pointer;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #222222;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: #222222;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+/* Riga alta menu */
+.menu-button::before {
+  content: "";
+  margin-top: -8px;
+  background-color: #afafaf;
+}
+
+/* Riga bassa menu */
+.menu-button::after {
+  content: "";
+  margin-top: 8px;
+  background-color: #afafaf;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: #222222;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  height: 60px;
+  line-height: 60px;
+  width: 100vw;
+  z-index: 1;
+}
+
+.logo {
+  float: left;
+  margin-left: 28px;
+  height: 60px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#navbar ul {
+  display: inline-block;
+  list-style: none;
+  margin-top: -2px;
+  text-align: right;
+  transition: transform 0.5s ease-out;
+  -webkit-transition: transform 0.5s ease-out;
+}
+#navbar ul li {
+  display: inline-block;
+}
+#navbar ul li a {
+  display: block;
+  font-size: 0.7em;
+  height: 50px;
+  letter-spacing: 1px;
+  margin: 0 40px;
+  padding: 0 4px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 1100px) {
+  .menu li {
+    margin: 0.8em;
+    padding: 5px;
+  }
+  .menu li a {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  /* navbar */
+  .menu-button-container {
+    display: flex;
+  }
+  .menu-button {
+    background-color: #afafaf;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 46.2px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: end;
+    z-index: 1;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border-bottom: 1px solid #afafaf;
+    border-left: 1px solid #afafaf;
+    height: 2.5em;
+    padding: 0.5em;
+    width: 10rem;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 25%;
+    background-color: #222222;
+    align-items: center;
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #afafaf;
+  }
+  .menu li a {
+    font-size: 0.8em;
+  }
+}
+@font-face {
+  font-family: "GruppoRegular";
+  src: url(../font/GruppoRegular.ttf);
+}
+footer {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 4rem;
+  border-top: 2px solid #afafaf;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contenitoreRigaSocial,
+.contenitoreRigaPrivacy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rigaSocial,
+.rigaPrivacy {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-left: 0;
+}
+
+.rigaPrivacy li {
+  list-style: none;
+  padding-left: 4rem;
+}
+.rigaPrivacy li a {
+  color: #afafaf;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.rigaSocial img {
+  filter: invert(70%);
+  height: 4rem;
+  padding: 15px;
+}
+
+.rigaSocial li {
+  list-style: none;
+}
+
+.rigaValidatore {
+  display: flex;
+  justify-content: center;
+}
+.rigaValidatore p {
+  padding-bottom: 1rem;
+}
+.rigaValidatore p img {
+  border: 0;
+  width: 88px;
+  height: 31px;
+}
+
+@media screen and (max-width: 600px) {
+  .privacy ul {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@font-face {
+  font-family: "GruppoRegular";
+  src: url(../font/GruppoRegular.ttf);
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  background-color: #222222;
+}
+body .return {
+  margin-top: 3rem;
+  font-family: "GruppoRegular";
+  font-size: 2rem;
+  color: #e0e0e0;
+  cursor: pointer;
+}
+
+.noLog {
+  color: #e0e0e0;
+}
+.noLog a {
+  color: #e0e0e0;
+}
+
+#errLogin {
+  color: rgba(255, 0, 0, 0.6901960784);
+}
+
+.error {
+  color: rgba(226, 1, 1, 0.637);
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overButton {
+  position: absolute;
+  width: 10rem;
+  height: 3.3rem;
+  z-index: 1;
+  cursor: not-allowed;
+}
+
+#btnUpload {
+  cursor: not-allowed;
+}
+
+.containerPrivacy {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+.containerPrivacy .textPrivacy {
+  font-size: small;
+  color: #afafaf;
+  padding-right: 1rem;
+}
+.containerPrivacy .textPrivacy a {
+  color: #afafaf;
+}
+.containerPrivacy input {
+  font-size: medium;
+}
+
+/* Riga presentazione */
+.rigaPresentazione {
+  display: flex;
+  flex-direction: row;
+  height: 40rem;
+  border-bottom: 2px solid #afafaf;
+}
+.rigaPresentazione .colonnaLarga {
+  text-align: left;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-items: left;
+  width: 75%;
+  padding: 3rem;
+  height: 100%;
+  color: #e0e0e0;
+}
+.rigaPresentazione .colonnaLarga h1 {
+  font-family: "GruppoRegular";
+  font-size: 4rem;
+  padding-bottom: 10px;
+}
+.rigaPresentazione .colonnaLarga p {
+  line-height: 1.8;
+}
+
+/* Riga about */
+#rigaAbout {
+  display: flex;
+  flex-direction: row;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  border-bottom: 2px solid #afafaf;
+}
+#rigaAbout .colonnaLarga {
+  text-align: left;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 75%;
+  color: #e0e0e0;
+  border-left: 2px solid #afafaf;
+  padding: 2rem;
+  flex-direction: column;
+}
+#rigaAbout .colonnaLarga h3 {
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  font-family: "GruppoRegular";
+  font-size: 4rem;
+  color: #e0e0e0;
+}
+#rigaAbout .colonnaLarga p {
+  line-height: 1.8;
+}
+#rigaAbout .colonnaLarga ul {
+  padding: 0;
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1rem;
+  list-style: none;
+}
+#rigaAbout .colonnaLarga ul li img {
+  height: 12rem;
+  filter: invert(75%);
+  padding: 2rem;
+}
+#rigaAbout .colonnaStretta {
+  width: 25%;
+  background: linear-gradient(63deg, #222222 23%, transparent 23%) 7px 0, linear-gradient(63deg, transparent 74%, #222222 78%), linear-gradient(63deg, transparent 34%, #222222 38%, #222222 58%, transparent 62%), #afafaf;
+  background-size: 16px 48px;
+}
+
+#rigaServices {
+  display: flex;
+  flex-direction: row;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  border-bottom: 2px solid #afafaf;
+}
+#rigaServices .colonnaLarga {
+  text-align: left;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #e0e0e0;
+  padding: 2rem;
+  flex-direction: column;
+}
+#rigaServices .colonnaLarga h3 {
+  padding-bottom: 1rem;
+  font-family: "GruppoRegular";
+  font-size: 4rem;
+  padding-bottom: 3rem;
+}
+#rigaServices .colonnaLarga p {
+  line-height: 1.8;
+  width: 60%;
+}
+#rigaServices .colonnaLarga ul {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+  width: 80%;
+  padding: 0;
+}
+#rigaServices .colonnaLarga ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  font-size: 1rem;
+  color: #e0e0e0;
+  font-family: "GruppoRegular";
+}
+#rigaServices .colonnaLarga ul li img {
+  width: 8rem;
+  filter: invert(80%);
+  margin-bottom: 1rem;
+}
+
+/* Riga works */
+#rigaWorks {
+  display: flex;
+  flex-direction: column;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  border-bottom: 2px solid #afafaf;
+  color: #e0e0e0;
+}
+#rigaWorks .rigaStretta {
+  height: 100px;
+  border-bottom: 2px solid #afafaf;
+  background: linear-gradient(135deg, #afafaf 25%, transparent 25%) -50px 0, linear-gradient(225deg, #afafaf 25%, transparent 25%) -50px 0, linear-gradient(315deg, #afafaf 25%, transparent 25%), linear-gradient(45deg, #afafaf 25%, transparent 25%);
+  background-size: 50px 50px;
+}
+#rigaWorks .colonnaLarga {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#rigaWorks .colonnaLarga h3 {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  font-family: "GruppoRegular";
+  font-size: 4rem;
+  color: #e0e0e0;
+}
+#rigaWorks .colonnaLarga .gallery {
+  width: 75%;
+}
+#rigaWorks .colonnaLarga .gallery ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0;
+}
+#rigaWorks .colonnaLarga .gallery ul li {
+  border: 1px solid #afafaf;
+  margin: 1rem;
+}
+#rigaWorks .colonnaLarga .gallery ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #e0e0e0;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  width: 15rem;
+  height: 17rem;
+  justify-content: center;
+}
+#rigaWorks .colonnaLarga .gallery ul li a img {
+  width: 95%;
+  margin: 1rem;
+  margin-bottom: 0;
+}
+#rigaWorks .colonnaLarga .gallery ul li:hover {
+  border: 2px solid #afafaf;
+}
+
+/* Riga Contacts */
+#rigaContatti {
+  display: flex;
+  flex-direction: row-reverse;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+}
+#rigaContatti .colonnaStretta {
+  width: 20%;
+  background: linear-gradient(45deg, #afafaf 45px, transparent 45px) 64px 64px, linear-gradient(45deg, #afafaf 45px, transparent 45px, transparent 91px, #222222 91px, #222222 135px, transparent 135px), linear-gradient(-45deg, #afafaf 23px, transparent 23px, transparent 68px, #afafaf 68px, #afafaf 113px, transparent 113px, transparent 158px, #afafaf 158px);
+  background-size: 128px 128px;
+  border-left: 2px solid #afafaf;
+}
+#rigaContatti .colonnaLarga {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+#rigaContatti .colonnaLarga .rigaTitolo h3 {
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  font-family: "GruppoRegular";
+  font-size: 4rem;
+  color: #e0e0e0;
+}
+#rigaContatti .colonnaLarga .rigaContenuto {
+  display: flex;
+  flex-direction: row;
+}
+#rigaContatti .colonnaLarga .rigaContenuto .contatti {
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-top: 5rem;
+  width: 32%;
+  display: flex;
+  justify-content: center;
+}
+#rigaContatti .colonnaLarga .rigaContenuto .contatti ul {
+  list-style: none;
+  padding: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#rigaContatti .colonnaLarga .rigaContenuto .contatti ul li {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+}
+#rigaContatti .colonnaLarga .rigaContenuto .contatti ul li :hover {
+  text-decoration: underline;
+}
+#rigaContatti .colonnaLarga .rigaContenuto .contatti ul a {
+  text-decoration: none;
+  color: #e0e0e0;
+}
+#rigaContatti .colonnaLarga .rigaContenuto .contatti ul img {
+  filter: invert(75%);
+  height: 2rem;
+  padding-right: 1rem;
+}
+#rigaContatti .colonnaLarga .rigaContenuto #formContatti {
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  padding-bottom: 2rem;
+  color: #e0e0e0;
+}
+#rigaContatti .colonnaLarga .rigaContenuto #formContatti h3 {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  font-family: "GruppoRegular";
+  font-size: 4rem;
+  color: #e0e0e0;
+}
+#rigaContatti .colonnaLarga .rigaContenuto #formContatti .counter {
+  color: rgba(255, 255, 255, 0.678);
+}
+#rigaContatti .colonnaLarga .rigaContenuto #formContatti .messaggioInviato {
+  color: #e0e0e0;
+}
+#rigaContatti .colonnaLarga .rigaContenuto fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#rigaContatti .colonnaLarga .rigaContenuto input[type=text], #rigaContatti .colonnaLarga .rigaContenuto input[type=email], #rigaContatti .colonnaLarga .rigaContenuto input[type=tel], #rigaContatti .colonnaLarga .rigaContenuto input[type=date] {
+  height: 4rem;
+  width: 25rem;
+  border: none;
+  border-bottom: 1px solid #afafaf;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 1rem;
+  background-color: #222222;
+  color: #e0e0e0;
+}
+#rigaContatti .colonnaLarga .rigaContenuto textarea {
+  margin-top: 2rem;
+  width: 25rem;
+  padding-top: 0.5rem;
+  background-color: #222222;
+  border: 1px solid #afafaf;
+  min-height: 6rem;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #e0e0e0;
+}
+#rigaContatti .colonnaLarga .rigaContenuto input[type=text]:focus, #rigaContatti .colonnaLarga .rigaContenuto input[type=email]:focus, #rigaContatti .colonnaLarga .rigaContenuto input[type=tel]:focus, #rigaContatti .colonnaLarga .rigaContenuto select:focus {
+  border-bottom: 3px solid #afafaf;
+  color: #e0e0e0;
+}
+#rigaContatti .colonnaLarga .rigaContenuto textarea:focus {
+  border: 3px solid #afafaf;
+}
+#rigaContatti .colonnaLarga .rigaContenuto div.elbutton {
+  text-align: right;
+}
+#rigaContatti .colonnaLarga .rigaContenuto button {
+  display: inline;
+  color: #e0e0e0;
+  background-color: #222222;
+  border: 1px solid #afafaf;
+  width: 10rem;
+  padding: 1rem;
+  font-size: 1rem;
+  margin: 1.5rem;
+  cursor: not-allowed;
+  z-index: 0;
+}
+#rigaContatti .colonnaLarga .rigaContenuto button:hover {
+  box-shadow: 0 0 0 2px #afafaf;
+}
+
+/* pagina worksDetail */
+.rigaLavori {
+  height: -moz-fit-content;
+  height: fit-content;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rigaLavori .rigaDescrizione {
+  width: 70%;
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rigaLavori .rigaDescrizione h1 {
+  font-size: 4rem;
+  padding-bottom: 4rem;
+  font-family: "GruppoRegular";
+}
+.rigaLavori .rigaDescrizione p {
+  width: 100%;
+}
+.rigaLavori .rigaDescrizione .rigaFoto {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 3rem;
+}
+.rigaLavori .rigaDescrizione .rigaFoto img {
+  width: 85%;
+}
+.rigaLavori button {
+  color: #e0e0e0;
+  background-color: #222222;
+  border: 1px solid #afafaf;
+  width: 10rem;
+  padding: 1rem;
+  font-size: 1rem;
+  margin: 1.5rem;
+}
+.rigaLavori button:hover {
+  box-shadow: 0 0 0 2px #afafaf;
+  cursor: pointer;
+}
+
+#formRegistrazione {
+  padding-top: 1rem;
+  height: 80%;
+}
+
+.paginaLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  color: #e0e0e0;
+}
+.paginaLogin .login {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.paginaLogin .login h1 {
+  font-family: "GruppoRegular";
+  font-size: 5rem;
+  padding-bottom: 3rem;
+}
+.paginaLogin .login form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.paginaLogin .login form .containerInput {
+  display: flex;
+  flex-direction: column;
+}
+.paginaLogin .login form .containerInput .containerUsername {
+  display: flex;
+  flex-direction: column;
+}
+.paginaLogin .login form .containerInput .containerUsername #errLogUsrnm {
+  display: flex;
+  justify-content: center;
+}
+.paginaLogin .login form .containerInput .containerPassword {
+  display: flex;
+  flex-direction: column;
+}
+.paginaLogin .login form .containerInput .containerPassword .containerPswTgle {
+  display: flex;
+  align-items: center;
+}
+.paginaLogin .login form .containerInput .containerPassword .containerPswTgle #errLogPsw {
+  display: flex;
+  justify-content: center;
+}
+.paginaLogin .login form .containerInput .containerPassword .containerPswTgle img {
+  width: 2.5rem;
+  cursor: pointer;
+  filter: invert(80%);
+}
+.paginaLogin .login form input[type=text], .paginaLogin .login form input[type=password] {
+  height: 4rem;
+  width: 25rem;
+  border: none;
+  border-bottom: 1px solid #afafaf;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 1rem;
+  background-color: #222222;
+  color: #e0e0e0;
+}
+.paginaLogin .login form #errLogPsw {
+  margin-bottom: 1rem;
+}
+.paginaLogin .login form button {
+  color: #e0e0e0;
+  background-color: #222222;
+  border: 1px solid #afafaf;
+  width: 10rem;
+  padding: 1rem;
+  font-size: 1rem;
+  margin: 1.5rem;
+}
+.paginaLogin .login form button:hover {
+  box-shadow: 0 0 0 2px #afafaf;
+}
+.paginaLogin p a {
+  text-decoration: underline;
+  color: #e0e0e0;
+}
+
+.paginaRegistrazione {
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.paginaRegistrazione .registrazione {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.paginaRegistrazione .registrazione h1 {
+  font-family: "GruppoRegular";
+  font-size: 4rem;
+  color: #e0e0e0;
+}
+.paginaRegistrazione .registrazione .return {
+  margin-top: 5rem;
+  text-decoration: none;
+}
+.paginaRegistrazione .registrazione #formRegistrazione {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 6rem;
+  border: 1px solid #afafaf;
+}
+.paginaRegistrazione .registrazione #formRegistrazione input[type=text], .paginaRegistrazione .registrazione #formRegistrazione input[type=password] {
+  height: 4rem;
+  width: 25rem;
+  border: none;
+  border-bottom: 1px solid #afafaf;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 1rem;
+  background-color: #222222;
+  color: #e0e0e0;
+}
+.paginaRegistrazione .registrazione #formRegistrazione .error {
+  color: rgba(226, 1, 1, 0.637);
+}
+.paginaRegistrazione .registrazione #formRegistrazione button {
+  color: #e0e0e0;
+  background-color: #222222;
+  border: 1px solid #afafaf;
+  width: 10rem;
+  padding: 1rem;
+  font-size: 1rem;
+  margin: 1.5rem;
+  z-index: 0;
+  cursor: not-allowed;
+}
+.paginaRegistrazione .registrazione #formRegistrazione button:hover {
+  box-shadow: 0 0 0 2px #afafaf;
+}
+.paginaRegistrazione .registrazione #formRegistrazione .dateContainer {
+  display: flex;
+  flex-direction: row;
+  width: 25rem;
+  justify-content: start;
+  border-bottom: 1px solid #afafaf;
+  height: 4rem;
+  align-items: center;
+}
+.paginaRegistrazione .registrazione #formRegistrazione .dateContainer label {
+  display: flex;
+  align-items: center;
+  padding-right: 5rem;
+  color: #afafaf;
+}
+.paginaRegistrazione .registrazione #formRegistrazione .selectSessoContainer {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+}
+
+input[type=date] {
+  background-color: #222222;
+  padding: 15px;
+  font-family: "Roboto Mono", monospace;
+  color: #ffffff;
+  font-size: 18px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #afafaf;
+  height: 3rem;
+}
+
+::-webkit-calendar-picker-indicator {
+  background-color: #ffffff;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.custom-select {
+  width: 25rem;
+  position: relative;
+}
+
+select {
+  -moz-appearance: none;
+       appearance: none;
+  /* safari */
+  -webkit-appearance: none;
+  /* other styles for aesthetics */
+  width: 100%;
+  font-size: 1.15rem;
+  padding: 0.675em 6em 0.675em 1em;
+  background-color: #222222;
+  border: 1px solid #caced1;
+  border-radius: 0.25rem;
+  color: #afafaf;
+  cursor: pointer;
+}
+
+.custom-select::before,
+.custom-select::after {
+  --size: 0.3rem;
+  position: absolute;
+  content: "";
+  right: 1rem;
+  pointer-events: none;
+}
+
+.custom-select::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid #afafaf;
+  top: 40%;
+}
+
+.custom-select::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid #afafaf;
+  top: 55%;
+}
+
+.paginaDashboard {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  padding-top: 4rem;
+}
+.paginaDashboard .containerTitoloDashboard {
+  height: 25%;
+}
+.paginaDashboard .containerTitoloDashboard h3 {
+  color: #e0e0e0;
+  font-size: 3rem;
+  font-family: "GruppoRegular";
+}
+.paginaDashboard .containerIconsDashboard {
+  display: flex;
+  justify-content: space-evenly;
+  height: 42%;
+}
+.paginaDashboard .containerIconsDashboard .containerUsers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.paginaDashboard .containerIconsDashboard .containerUsers img {
+  width: 8rem;
+  filter: invert(75%);
+}
+.paginaDashboard .containerIconsDashboard .containerUsers a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-family: "GruppoRegular";
+  font-size: 3rem;
+}
+.paginaDashboard .containerIconsDashboard .containerLavori {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.paginaDashboard .containerIconsDashboard .containerLavori img {
+  width: 8rem;
+  filter: invert(75%);
+}
+.paginaDashboard .containerIconsDashboard .containerLavori a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-family: "GruppoRegular";
+  font-size: 3rem;
+}
+.paginaDashboard .containerLogoutDashboard {
+  height: 33%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.paginaDashboard .containerLogoutDashboard div {
+  text-decoration: none;
+  font-size: 2rem;
+  font-family: "GruppoRegular";
+  color: #e0e0e0;
+  cursor: pointer;
+}
+
+.paginaVisualizzazioneUtenti {
+  height: 90vh;
+  padding: 1rem;
+  padding-top: 4rem;
+}
+.paginaVisualizzazioneUtenti .containerTitolo {
+  height: 25%;
+}
+.paginaVisualizzazioneUtenti .containerTitolo h1 {
+  color: #e0e0e0;
+  font-size: 4rem;
+  font-family: "GruppoRegular";
+}
+.paginaVisualizzazioneUtenti .flex-container {
+  height: 42%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.paginaVisualizzazioneUtenti .flex-container .listaUtenti {
+  margin-right: 3rem;
+}
+.paginaVisualizzazioneUtenti .flex-container .listaUtenti ul {
+  padding: 0rem;
+  border: 1px solid #afafaf;
+  overflow: scroll;
+  height: 20rem;
+}
+.paginaVisualizzazioneUtenti .flex-container .listaUtenti ul li {
+  list-style: none;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.paginaVisualizzazioneUtenti .flex-container .listaUtenti ul li a {
+  color: #e0e0e0;
+  text-decoration: none;
+  border-bottom: 1px solid #afafaf;
+  padding: 1rem;
+  display: list-item;
+}
+.paginaVisualizzazioneUtenti .flex-container .listaUtenti ul li.selezionato {
+  background-color: #afafaf;
+}
+.paginaVisualizzazioneUtenti .flex-container .listaUtenti ul li.selezionato a {
+  color: #222222;
+}
+.paginaVisualizzazioneUtenti .flex-container .contenuto {
+  width: 40%;
+  border: 1px solid #afafaf;
+  height: 20rem;
+  display: inline-block;
+}
+.paginaVisualizzazioneUtenti .flex-container .contenuto h3 {
+  color: #e0e0e0;
+  padding: 1rem;
+}
+.paginaVisualizzazioneUtenti .flex-container .contenuto .grass {
+  font-weight: bold;
+  color: #e0e0e0;
+}
+.paginaVisualizzazioneUtenti .flex-container .contenuto .datiUtente {
+  color: #e0e0e0;
+  padding: 0.5rem;
+}
+.paginaVisualizzazioneUtenti .flex-container #formPulsanti {
+  display: flex;
+  flex-direction: column;
+}
+.paginaVisualizzazioneUtenti .flex-container #formPulsanti button {
+  display: inline;
+  color: #e0e0e0;
+  background-color: #222222;
+  border: 1px solid #afafaf;
+  width: 10rem;
+  padding: 1rem;
+  font-size: 1rem;
+  margin: 1.5rem;
+}
+.paginaVisualizzazioneUtenti .flex-container #formPulsanti button:hover {
+  box-shadow: 0 0 0 2px #afafaf;
+  cursor: pointer;
+}
+
+.paginaModificaUtente {
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.paginaModificaUtente .contenuto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  padding-bottom: 3rem;
+}
+.paginaModificaUtente .contenuto .contenitoreTitolo {
+  display: flex;
+  justify-content: center;
+  color: #e0e0e0;
+  padding-bottom: 2rem;
+}
+.paginaModificaUtente .contenuto .contenitoreTitolo h1 {
+  font-family: "GruppoRegular";
+  font-size: 4rem;
+}
+.paginaModificaUtente .contenuto #formModificaUtente {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  border: 1px solid #afafaf;
+  width: 70%;
+}
+.paginaModificaUtente .contenuto #formModificaUtente label {
+  color: #e0e0e0;
+  font-weight: bold;
+}
+.paginaModificaUtente .contenuto #formModificaUtente .fieldContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.paginaModificaUtente .contenuto #formModificaUtente .fieldContainer select {
+  color: #e0e0e0;
+}
+.paginaModificaUtente .contenuto #formModificaUtente .fieldContainer .error {
+  color: rgba(226, 1, 1, 0.637);
+}
+.paginaModificaUtente .contenuto #formModificaUtente .fieldContainer input[type=text],
+.paginaModificaUtente .contenuto #formModificaUtente .fieldContainer input[type=password] {
+  background-color: #222222;
+  color: #e0e0e0;
+  border-bottom: 1px solid #afafaf;
+  border-right: none;
+  font-size: 1.2rem;
+}
+.paginaModificaUtente .contenuto #formModificaUtente .containerButton {
+  display: flex;
+  justify-content: center;
+}
+.paginaModificaUtente .contenuto #formModificaUtente .containerButton button {
+  color: #e0e0e0;
+  background-color: #222222;
+  border: 1px solid #afafaf;
+  width: 10rem;
+  padding: 1rem;
+  font-size: 1rem;
+  margin: 1.5rem;
+}
+.paginaModificaUtente .contenuto #formModificaUtente .containerButton button:hover {
+  box-shadow: 0 0 0 2px #afafaf;
+  cursor: pointer;
+}
+
+.paginaVisualizzazioneLavori {
+  height: 95vh;
+  padding: 1rem;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+.paginaVisualizzazioneLavori .containerTitolo {
+  height: 25%;
+  padding-bottom: 2rem;
+}
+.paginaVisualizzazioneLavori .containerTitolo h1 {
+  color: #e0e0e0;
+  font-size: 4rem;
+  font-family: "GruppoRegular";
+}
+.paginaVisualizzazioneLavori .flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+.paginaVisualizzazioneLavori .flex-container .listaLavori {
+  margin-right: 3rem;
+  width: 20%;
+}
+.paginaVisualizzazioneLavori .flex-container .listaLavori ul {
+  padding: 0rem;
+  border: 1px solid #afafaf;
+  overflow: scroll;
+  height: 24rem;
+}
+.paginaVisualizzazioneLavori .flex-container .listaLavori ul li {
+  list-style: none;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.paginaVisualizzazioneLavori .flex-container .listaLavori ul li a {
+  color: #e0e0e0;
+  text-decoration: none;
+  border-bottom: 1px solid #afafaf;
+  padding: 1rem;
+  display: list-item;
+}
+.paginaVisualizzazioneLavori .flex-container .listaLavori ul li.selezionato {
+  background-color: #afafaf;
+}
+.paginaVisualizzazioneLavori .flex-container .listaLavori ul li.selezionato a {
+  color: #222222;
+}
+.paginaVisualizzazioneLavori .flex-container .contenuto {
+  width: 30%;
+  border: 1px solid #afafaf;
+  display: flex;
+  display: inline-block;
+  height: 24rem;
+}
+.paginaVisualizzazioneLavori .flex-container .contenuto h3 {
+  color: #e0e0e0;
+  padding: 1rem;
+}
+.paginaVisualizzazioneLavori .flex-container .contenuto .grass {
+  font-weight: bold;
+  color: #e0e0e0;
+  padding-left: 1rem;
+}
+.paginaVisualizzazioneLavori .flex-container .contenuto .datiLavori {
+  color: #e0e0e0;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.paginaVisualizzazioneLavori .flex-container .contenuto .datiLavoriDescrizione {
+  color: #e0e0e0;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 12rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.paginaVisualizzazioneLavori .flex-container .containerImmagine {
+  display: flex;
+  justify-content: center;
+  margin-left: 3rem;
+  width: 30%;
+  border: 1px solid #afafaf;
+  align-items: center;
+  height: 24rem;
+}
+.paginaVisualizzazioneLavori .flex-container .containerImmagine img {
+  width: 95%;
+}
+.paginaVisualizzazioneLavori .containerPulsanti {
+  display: flex;
+  justify-content: center;
+}
+.paginaVisualizzazioneLavori .containerPulsanti #formPulsanti {
+  display: flex;
+  flex-direction: row;
+}
+.paginaVisualizzazioneLavori .containerPulsanti #formPulsanti button {
+  display: inline;
+  color: #e0e0e0;
+  background-color: #222222;
+  border: 1px solid #afafaf;
+  width: 10rem;
+  padding: 1rem;
+  font-size: 1rem;
+  margin: 1.5rem;
+}
+.paginaVisualizzazioneLavori .containerPulsanti #formPulsanti button:hover {
+  box-shadow: 0 0 0 2px #afafaf;
+}
+
+.paginaAggiungiLavori {
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1rem;
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.paginaAggiungiLavori .containerTitolo {
+  height: 25%;
+  padding-bottom: 2rem;
+}
+.paginaAggiungiLavori .containerTitolo h1 {
+  color: #e0e0e0;
+  font-size: 4rem;
+  font-family: "GruppoRegular";
+}
+.paginaAggiungiLavori #formAggiungiLavori {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 6rem;
+  border: 1px solid #afafaf;
+}
+.paginaAggiungiLavori #formAggiungiLavori input[type=text] {
+  height: 4rem;
+  width: 25rem;
+  border: none;
+  border-bottom: 1px solid #afafaf;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 1rem;
+  background-color: #222222;
+  color: #e0e0e0;
+}
+.paginaAggiungiLavori #formAggiungiLavori textarea {
+  margin-top: 2rem;
+  width: 25rem;
+  padding-top: 0.5rem;
+  background-color: #222222;
+  border: 1px solid #afafaf;
+  min-height: 6rem;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #e0e0e0;
+}
+.paginaAggiungiLavori #formAggiungiLavori .counter {
+  color: #afafaf;
+}
+.paginaAggiungiLavori #formAggiungiLavori .error {
+  color: rgba(226, 1, 1, 0.637);
+}
+.paginaAggiungiLavori #formAggiungiLavori button {
+  display: inline;
+  color: #e0e0e0;
+  background-color: #222222;
+  border: 1px solid #afafaf;
+  width: 10rem;
+  padding: 1rem;
+  font-size: 1rem;
+  margin: 1.5rem;
+}
+.paginaAggiungiLavori #formAggiungiLavori button:hover {
+  box-shadow: 0 0 0 2px #afafaf;
+  cursor: pointer;
+}
+
+.paginaModificaLavori {
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1rem;
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.paginaModificaLavori .containerTitolo {
+  height: 25%;
+  padding-bottom: 2rem;
+}
+.paginaModificaLavori .containerTitolo h1 {
+  color: #e0e0e0;
+  font-size: 4rem;
+  font-family: "GruppoRegular";
+}
+.paginaModificaLavori .contenuto {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.paginaModificaLavori .contenuto h3 {
+  padding: 1rem;
+  color: #e0e0e0;
+}
+.paginaModificaLavori .contenuto #formModificaLavori {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  border: 1px solid #afafaf;
+  margin: 0.5rem;
+  height: 26rem;
+  width: 50%;
+}
+.paginaModificaLavori .contenuto #formModificaLavori label {
+  color: #e0e0e0;
+  font-weight: bold;
+}
+.paginaModificaLavori .contenuto #formModificaLavori input {
+  margin-bottom: 1rem;
+  height: 4rem;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #afafaf;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 1rem;
+  background-color: #222222;
+  color: #e0e0e0;
+}
+.paginaModificaLavori .contenuto #formModificaLavori .counter {
+  padding-bottom: 1rem;
+  color: #afafaf;
+}
+.paginaModificaLavori .contenuto #formModificaLavori textarea {
+  width: 100%;
+  background-color: #222222;
+  border: 1px solid #afafaf;
+  min-height: 6rem;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #e0e0e0;
+}
+.paginaModificaLavori .contenuto #formModificaLavori .error {
+  color: rgba(226, 1, 1, 0.637);
+}
+.paginaModificaLavori .contenuto #formModificaLavori .buttonContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.paginaModificaLavori .contenuto #formModificaLavori .buttonContainer button {
+  display: inline;
+  color: #e0e0e0;
+  background-color: #222222;
+  border: 1px solid #afafaf;
+  width: 10rem;
+  padding: 1rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.paginaModificaLavori .contenuto #formModificaLavori .buttonContainer button:hover {
+  box-shadow: 0 0 0 2px #afafaf;
+}
+.paginaModificaLavori .contenuto #formUpload {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  margin: 0.5rem;
+  border: 1px solid #afafaf;
+  color: #e0e0e0;
+  height: 26rem;
+  width: 50%;
+}
+.paginaModificaLavori .contenuto #formUpload div {
+  font-weight: bold;
+}
+.paginaModificaLavori .contenuto #formUpload input[type=file]::file-selector-button {
+  margin-top: 1rem;
+  color: #e0e0e0;
+  background-color: #222222;
+  border: 1px solid #afafaf;
+  width: 5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+.paginaModificaLavori .contenuto #formUpload input[type=file]::file-selector-button:hover {
+  box-shadow: 0 0 0 2px #afafaf;
+  cursor: pointer;
+}
+.paginaModificaLavori .contenuto #formUpload .buttonContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.paginaModificaLavori .contenuto #formUpload .buttonContainer button {
+  color: #e0e0e0;
+  background-color: #222222;
+  border: 1px solid #afafaf;
+  width: 10rem;
+  padding: 1rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.paginaModificaLavori .contenuto #formUpload .buttonContainer button:hover {
+  box-shadow: 0 0 0 2px #afafaf;
+  cursor: pointer;
+}
+.paginaModificaLavori .contenuto #formUpload .imageContainer {
+  display: flex;
+  justify-content: center;
+  height: 55%;
+  width: 100%;
+}
+
+@media screen and (max-width: 1030px) {
+  #rigaContatti {
+    flex-direction: column;
+    align-items: center;
+  }
+  #rigaContatti .colonnaStretta {
+    width: 100%;
+    height: 3rem;
+    border-bottom: 1px solid #afafaf;
+  }
+  #rigaContatti .colonnaLarga {
+    width: 100%;
+  }
+  #rigaContatti .colonnaLarga .rigaTitolo h3 {
+    font-size: 3rem;
+  }
+  #rigaContatti .colonnaLarga .rigaContenuto {
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  #rigaContatti .colonnaLarga .rigaContenuto input[type=text], #rigaContatti .colonnaLarga .rigaContenuto input[type=email], #rigaContatti .colonnaLarga .rigaContenuto input[type=tel], #rigaContatti .colonnaLarga .rigaContenuto input[type=date] {
+    width: 95%;
+  }
+  #rigaContatti .colonnaLarga .rigaContenuto textarea {
+    width: 95%;
+  }
+  #rigaContatti .colonnaLarga .rigaContenuto .contatti {
+    padding-top: 0;
+  }
+}
+@media screen and (max-width: 1150px) {
+  #rigaAbout .colonnaLarga ul {
+    grid-template-columns: auto auto auto;
+  }
+}
+@media screen and (max-width: 843px) {
+  #rigaServices .colonnaLarga ul {
+    grid-template-columns: auto auto;
+  }
+  #rigaServices .colonnaLarga ul li img {
+    width: 6rem;
+  }
+  #rigaAbout .colonnaLarga ul {
+    grid-template-columns: auto auto auto;
+  }
+  #rigaAbout .colonnaLarga ul img {
+    height: 9rem;
+  }
+}
+@media screen and (max-width: 630px) {
+  #rigaServices .colonnaLarga ul {
+    grid-template-columns: auto auto;
+  }
+  #rigaServices .colonnaLarga ul li img {
+    width: 5rem;
+  }
+  #rigaAbout .colonnaLarga ul {
+    grid-template-columns: auto auto auto;
+  }
+  #rigaAbout .colonnaLarga ul li img {
+    height: 8rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  /* Riga presentazione */
+  .rigaPresentazione {
+    flex-direction: column-reverse;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .rigaPresentazione .colonnaLarga {
+    width: 100%;
+    height: 85%;
+  }
+  .rigaPresentazione .colonnaLarga h1 {
+    font-size: 3rem;
+  }
+  .rigaPresentazione .colonnaLarga p {
+    font-size: 0.8rem;
+    padding-right: 0;
+  }
+  .rigaPresentazione .colonnaStretta {
+    width: 100%;
+    height: 90px;
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+  }
+  #rigaAbout {
+    flex-direction: column;
+    height: -moz-fit-content;
+    height: fit-content;
+    justify-content: center;
+  }
+  #rigaAbout .colonnaStretta {
+    width: 100%;
+    height: 90px;
+    border-right: none;
+    border-bottom: 2px solid #afafaf;
+  }
+  #rigaAbout .colonnaLarga {
+    border-left: none;
+    height: 85%;
+    width: 100%;
+    padding: 2rem;
+  }
+  #rigaAbout .colonnaLarga h3 {
+    font-size: 3rem;
+    padding-top: 0;
+    padding-bottom: 2rem;
+  }
+  #rigaAbout .colonnaLarga p {
+    font-size: 0.8rem;
+  }
+  #rigaAbout .colonnaLarga ul {
+    grid-template-columns: auto auto auto auto;
+  }
+  #rigaAbout .colonnaLarga ul img {
+    height: 7rem;
+  }
+  #rigaServices {
+    flex-direction: column-reverse;
+    height: -moz-fit-content;
+    height: fit-content;
+    justify-content: center;
+  }
+  #rigaServices .colonnaStretta {
+    width: 100%;
+    height: 0px;
+    border-bottom: none;
+  }
+  #rigaServices .colonnaLarga {
+    border-left: none;
+    height: 85%;
+    width: 100%;
+    padding: 2rem;
+    border-right: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #rigaServices .colonnaLarga h3 {
+    font-size: 3rem;
+  }
+  #rigaServices .colonnaLarga p {
+    font-size: 0.8rem;
+  }
+  #rigaServices .colonnaLarga ul {
+    padding: 0;
+    grid-template-columns: auto auto auto;
+  }
+  #rigaServices .colonnaLarga ul li {
+    font-size: 0.7rem;
+  }
+  #rigaServices .colonnaLarga ul li img {
+    width: 4rem;
+  }
+  #rigaWorks .colonnaStretta {
+    height: 20%;
+  }
+  #rigaWorks .colonnaLarga {
+    height: 80%;
+  }
+  #rigaWorks .colonnaLarga h3 {
+    font-size: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+  #rigaWorks .colonnaLarga .gallery {
+    width: 100%;
+  }
+  #rigaWorks .colonnaLarga .gallery img {
+    width: 8rem;
+  }
+  /* Pagina WorksDetail*/
+  input[type=text],
+  input[type=email],
+  input[type=tel],
+  input[type=date],
+  textarea {
+    width: 15rem;
+  }
+  .rigaLavori {
+    display: flex;
+    flex-direction: column;
+  }
+  .rigaLavori h1 {
+    font-size: 4rem;
+  }
+  .paginaLogin .login {
+    width: 80%;
+  }
+  .paginaLogin .login form {
+    width: 100%;
+  }
+  .paginaLogin .login form .containerInput {
+    width: 100%;
+  }
+  .paginaLogin .login form .containerInput .containerUsername {
+    width: 100%;
+  }
+  .paginaLogin .login form .containerInput .containerUsername #errLogUsrnm {
+    width: 100%;
+  }
+  .paginaLogin .login form .containerInput .containerPassword {
+    width: 100%;
+  }
+  .paginaLogin .login form .containerInput .containerPassword .containerPswTgle {
+    width: 100%;
+  }
+  .paginaLogin .login form .containerInput .containerPassword .containerPswTgle #errLogPsw {
+    width: 100%;
+  }
+  .paginaLogin .login form .containerInput .containerPassword .containerPswTgle img {
+    width: 2.5rem;
+    cursor: pointer;
+    filter: invert(80%);
+  }
+  .paginaLogin .login form input[type=text], .paginaLogin .login form input[type=password] {
+    width: 16rem;
+  }
+}
+@media screen and (max-width: 497px) {
+  #rigaAbout .colonnaLarga ul {
+    grid-template-columns: auto auto auto;
+  }
+  #rigaAbout .colonnaLarga ul img {
+    height: 6.5rem;
+  }
+  #rigaServices .colonnaLarga ul {
+    grid-template-columns: auto auto;
+  }
+  #rigaServices .colonnaLarga ul li img {
+    width: 3rem;
+  }
+}/*# sourceMappingURL=style.min.css.map */

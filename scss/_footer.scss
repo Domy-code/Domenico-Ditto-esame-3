@@ -1,0 +1,69 @@
+@import "variabili";
+
+
+footer {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 4rem;
+    border-top: 2px solid $gfColorDarkMode; 
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.contenitoreRigaSocial,
+.contenitoreRigaPrivacy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rigaSocial,
+.rigaPrivacy {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    padding-left: 0;
+}
+
+.rigaPrivacy li {
+    list-style: none;
+    padding-left: 4rem;
+
+    & a {
+        color: $gfColorDarkMode;
+        text-decoration: none;
+        padding: 10px;
+       
+    }
+}
+
+.rigaSocial img {
+    filter: invert(70%);
+    height: 4rem;
+    padding: 15px;
+}
+
+.rigaSocial li {
+    list-style: none;
+}
+
+.rigaValidatore {
+    display: flex;
+    justify-content: center;
+    & p{
+        padding-bottom: 1rem;
+        & img{
+            border:0;
+            width:88px;
+            height:31px;
+         }
+    }
+   
+}
+@media screen and (max-width:600px) {
+       .privacy ul {
+        display: flex;
+        flex-direction: column;
+    }
+}
