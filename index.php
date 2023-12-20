@@ -385,7 +385,7 @@ echo creaMenuNavbar();
                     // controllo se il nome contiene solo lettere e spazi vuoti
                     else if (!regexNome.test(nome.value)) {
                         nome.style.borderColor = "#ff0000b0";
-                        errNome = "Sono ammesse solo lettere e spazi";
+                        errNome.innerHTML= "Sono ammesse solo lettere e spazi";
                     }
                     //controllo che la lunghezza del campo sia corretta
                     else if (nome.value.length < 3 || nome.value.lenght > 20) {
